@@ -8,7 +8,7 @@ const webhookListenerPath = '/webhook';
 const router = express();
 router.use(bodyParser.json())
 
-// tag::simple-webhook[]
+// tag::simplewebhook[]
 router.route('/fusionauth-webhook').post((req, res) => {
   const authorization = req.header('Authorization');
   if (authorization !== 'API-KEY') {
@@ -34,7 +34,7 @@ router.route('/fusionauth-webhook').post((req, res) => {
     res.sendStatus(200);
   }
 });
-// end::simple-webhook[]
+// end::simplewebhook[]
 
 router.listen(port, function () {
   console.log(`Example app listening on port ${port}!`);
